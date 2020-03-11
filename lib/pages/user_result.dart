@@ -38,7 +38,7 @@ class UserResult extends StatelessWidget {
             ),
             Divider(
               height: 2.0,
-              color: Colors.white54,
+              color: Colors.black87,
             ),
           ],
         ),
