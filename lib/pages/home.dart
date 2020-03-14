@@ -9,9 +9,12 @@ import 'package:social_network/pages/search.dart';
 import 'package:social_network/pages/time_line.dart';
 import 'package:social_network/pages/upload.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
+final StorageReference storageRef = FirebaseStorage.instance.ref();
 final usersRef = Firestore.instance.collection('users');
+final postRef = Firestore.instance.collection('posts');
 final DateTime timeStamp = DateTime.now();
 User currentUser;
 
@@ -93,8 +96,8 @@ class _HomeState extends State<Home> {
       doc = await usersRef.document(user.id).get();
     }
     currentUser = User.fromDocument(doc);
-    print(currentUser);
-    print(currentUser.username);
+    // print(currentUser);
+    // print(currentUser.username);
   }
 
   login() async {
